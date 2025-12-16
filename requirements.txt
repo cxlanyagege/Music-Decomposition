@@ -1,0 +1,21 @@
+# Audio Processing
+librosa
+soundfile
+audioread
+
+# Machine Learning
+scikit-learn
+xgboost
+
+# Data Processing
+numpy
+pandas
+
+# Visualization
+matplotlib
+seaborn
+
+# Utilities
+joblib
+tqdm
+pyyaml

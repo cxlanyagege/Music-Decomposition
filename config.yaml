@@ -1,0 +1,56 @@
+# Configuration file for Music Instrument Recognition
+
+# Data paths
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  random_seed: 42
+
+# Audio processing
+audio:
+  sample_rate: 22050
+  duration: 3.0  # seconds
+  offset: 0.5  # seconds to skip at the beginning
+
+# Feature extraction
+features:
+  n_mfcc: 20
+  n_fft: 2048
+  hop_length: 512
+  n_mels: 128
+  
+# Model training
+training:
+  models:
+    - "svm"
+    - "random_forest"
+    - "xgboost"
+  
+  # SVM parameters
+  svm:
+    kernel: "rbf"
+    C: 1.0
+    gamma: "scale"
+  
+  # Random Forest parameters
+  random_forest:
+    n_estimators: 100
+    max_depth: 20
+    min_samples_split: 2
+    random_state: 42
+  
+  # XGBoost parameters
+  xgboost:
+    n_estimators: 100
+    max_depth: 6
+    learning_rate: 0.1
+    random_state: 42
+
+# Output
+output:
+  model_dir: "models"
+  results_dir: "results"
+  log_dir: "logs"
